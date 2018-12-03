@@ -1,0 +1,29 @@
+<% include partials/header.ejs %>
+        <% if (previews.length > 0) {%>
+                    <% previews.forEach((element, index) => { %>
+                        
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm">
+                                <img class="card-img-top" src=<%= previews[index].image %> data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap" style="height: 225px; width: 100%;">
+                                <div class="card-body">
+                                <p class="card-text"><%= previews[index].description %></p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href=<%= element.url %> class="btn btn-sm btn-outline-secondary">View</a>
+                                        <a href="/edit" class="btn btn-sm btn-outline-secondary">Edit</a>
+                                    </div>
+                                    <small class="text-muted">9 mins</small>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    <% }) %>
+        <% } else { %>
+            <!-- when aritcle.length == 0 -->
+        <% } %>
+                <!-- container -->
+                </div>
+            <!-- album -->
+            </div>
+<% include partials/footer.ejs %>
